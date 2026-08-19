@@ -1,16 +1,31 @@
-# React + Vite
+# Arte Utilitario
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+E-commerce de portavasos artesanales con diseños únicos.
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Arte Utilitario es una tienda online enfocada en la venta de portavasos artesanales. Este proyecto será desarrollado con React y se irá ampliando durante las siguientes etapas del curso.
 
-## React Compiler
+## Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* JavaScript
+* Vite
+* CSS
+* Git
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Clonar el repositorio e instalar las dependencias:
+
+```bash
+npm install
+```
+
+## Ejecutar el proyecto
+
+Para iniciar el servidor de desarrollo:
+
+```bash
+npm run dev
+```
