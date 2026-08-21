@@ -1,9 +1,12 @@
+import Navbar from './components/Navbar'
+import ItemListContainer from './components/ItemListContainer'
+
 function App() {
   return (
-    <main>
-      <h1>Arte Utilitario</h1>
-      <p>Portavasos artesanales con diseños únicos.</p>
-    </main>
+    <>
+      <Navbar />
+      <ItemListContainer greeting="Úsalos en tus reuniones y abre la conversación." />
+    </>
   )
 }
 
