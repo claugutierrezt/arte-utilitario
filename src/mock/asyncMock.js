@@ -43,7 +43,7 @@ const products = [
     img: '/img/taberna.png',
     stock: 9,
     description: 'Detalles de una barra y objetos cotidianos vistos desde la ilustración.'
-  }, 
+  },
   {
     id: '6',
     name: 'Aceitunas',
@@ -60,5 +60,19 @@ export const getProducts = () => {
     setTimeout(() => {
       resolve(products)
     }, 2000)
+  })
+}
+
+export const getProductById = (productId) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const product = products.find((product) => product.id === productId)
+
+      if (product) {
+        resolve(product)
+      } else {
+        reject(new Error('Producto no encontrado'))
+      }
+    }, 1000)
   })
 }

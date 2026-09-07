@@ -1,18 +1,22 @@
 function Item({ product }) {
   return (
-    <article className="product-card">
-      <div className="product-image-wrapper">
-        <img className="product-image" src={product.img} alt={product.name} />
-      </div>
+    <article className="item-card">
+      <img
+        src={product.img}
+        alt={product.name}
+        className="item-card__image"
+      />
 
-      <div className="product-content">
-        <span className="product-category">{product.category}</span>
-        <h2>{product.name}</h2>
-        <p className="product-description">{product.description}</p>
-        <div className="product-meta">
-          <strong className="product-price">${product.price} MXN</strong>
-          <span className="product-stock">Stock: {product.stock}</span>
-        </div>
+      <div className="item-card__content">
+        <p className="item-card__category">
+          {product.category}
+        </p>
+
+        <h3>{product.name}</h3>
+
+        <p className="item-card__price">
+          ${product.price}
+        </p>
       </div>
     </article>
   )

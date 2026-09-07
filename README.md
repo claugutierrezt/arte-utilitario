@@ -1,37 +1,42 @@
 # Arte Utilitario
 
-E-commerce de portavasos artesanales con diseños únicos.
+Proyecto desarrollado en React con Vite para el curso de React JS.
 
-## Descripción
+La aplicación representa un catálogo de portavasos artesanales organizados por categorías como viajes, músicos y momentos.
 
-Arte Utilitario es una tienda online enfocada en la venta de portavasos artesanales. Este proyecto será desarrollado con React y se irá ampliando durante las siguientes etapas del curso.
+## Funcionalidades actuales
 
-## Componentes creados
+- Listado dinámico de productos.
+- Renderizado de productos mediante `.map()`.
+- Obtención de productos mediante una promesa simulada.
+- Uso de `useState` y `useEffect`.
+- Separación de responsabilidades entre componentes.
+- Vista individual de detalle de producto.
+- Búsqueda dinámica de producto por `id`.
+- Reutilización del componente `ItemCount`.
+- Control de stock en el contador.
+- Diseño responsive.
 
-- `Navbar`: contiene el nombre de la tienda, las categorías Viajes, Músicos y Momentos, y el componente del carrito.
-- `CartWidget`: muestra el ícono del carrito y una cantidad de productos de manera estática.
-- `ItemListContainer`: recibe mediante props el mensaje principal de bienvenida de la tienda.
+## Estructura principal
 
-## Tecnologías utilizadas
+El proyecto utiliza componentes separados para mantener responsabilidades claras:
 
-* React
-* JavaScript
-* Vite
-* CSS
-* Git
+- `ItemListContainer`: obtiene la colección de productos y administra la lógica de carga.
+- `ItemList`: recibe la colección y genera el listado.
+- `Item`: muestra la información resumida de cada producto.
+- `ItemDetailContainer`: obtiene un producto por su identificador y administra el estado.
+- `ItemDetail`: muestra la información completa del producto.
+- `ItemCount`: administra la cantidad seleccionada respetando el stock disponible.
+- `Navbar`: contiene la navegación principal.
+- `CartWidget`: representa visualmente el carrito.
 
-## Instalación
+## Promesas asíncronas
 
-Clonar el repositorio e instalar las dependencias:
+Los datos del catálogo se encuentran temporalmente en un mock local.
 
-```bash
-npm install
-```
+La función `getProducts()` devuelve una promesa y utiliza `setTimeout` para simular la demora que tendría una petición a una API.
 
-## Ejecutar el proyecto
+Para la vista individual se creó la función:
 
-Para iniciar el servidor de desarrollo:
-
-```bash
-npm run dev
-```
+```js
+getProductById(productId)
