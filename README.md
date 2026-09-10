@@ -16,27 +16,32 @@ La aplicación representa un catálogo de portavasos artesanales organizados por
 - Reutilización del componente `ItemCount`.
 - Control de stock en el contador.
 - Diseño responsive.
+- Navegación con `react-router-dom`.
+- Rutas dinámicas por categoría.
+- Rutas dinámicas por producto.
+- Navegación interna con `Link` y `NavLink`.
+- Ruta 404 para URLs inexistentes.
+- Navbar y Footer persistentes en toda la aplicación.
+- Uso de CSS Modules para encapsular los estilos de cada componente.
 
-## Estructura principal
+## Navegación
 
-El proyecto utiliza componentes separados para mantener responsabilidades claras:
+La aplicación utiliza `react-router-dom` para manejar la navegación sin recargar la página.
 
-- `ItemListContainer`: obtiene la colección de productos y administra la lógica de carga.
-- `ItemList`: recibe la colección y genera el listado.
-- `Item`: muestra la información resumida de cada producto.
-- `ItemDetailContainer`: obtiene un producto por su identificador y administra el estado.
-- `ItemDetail`: muestra la información completa del producto.
-- `ItemCount`: administra la cantidad seleccionada respetando el stock disponible.
-- `Navbar`: contiene la navegación principal.
-- `CartWidget`: representa visualmente el carrito.
+Rutas principales:
 
-## Promesas asíncronas
+- `/` → muestra todos los productos.
+- `/category/:id` → muestra los productos filtrados por categoría.
+- `/item/:id` → muestra el detalle de un producto según su identificador.
+- `*` → muestra la página 404 para rutas inexistentes.
 
-Los datos del catálogo se encuentran temporalmente en un mock local.
+Ejemplos:
 
-La función `getProducts()` devuelve una promesa y utiliza `setTimeout` para simular la demora que tendría una petición a una API.
+```txt
+/category/viajes
+/category/musicos
+/category/momentos
 
-Para la vista individual se creó la función:
-
-```js
-getProductById(productId)
+/item/1
+/item/2
+/item/3

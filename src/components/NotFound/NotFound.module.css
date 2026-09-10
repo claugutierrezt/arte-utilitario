@@ -1,0 +1,28 @@
+.notFound {
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.code {
+  margin: 0;
+  font-size: 72px;
+  font-weight: 700;
+}
+
+.notFound h1 {
+  margin: 10px 0;
+}
+
+.notFound p {
+  line-height: 1.6;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}

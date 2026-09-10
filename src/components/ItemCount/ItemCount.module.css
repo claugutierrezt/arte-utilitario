@@ -1,0 +1,32 @@
+.itemCount {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.itemCount button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f7f7f7;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.itemCount button:hover:not(:disabled) {
+  background: #ececec;
+}
+
+.itemCount button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.itemCount span {
+  min-width: 30px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}

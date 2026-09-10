@@ -31,7 +31,7 @@ const products = [
     name: 'Músicos',
     price: 185,
     category: 'musicos',
-    img: '/img/músicos.png',
+    img: '/img/musicos.png',
     stock: 7,
     description: 'Música de calle, personajes y momentos convertidos en ilustración.'
   },
@@ -66,7 +66,9 @@ export const getProducts = () => {
 export const getProductById = (productId) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const product = products.find((product) => product.id === productId)
+      const product = products.find(
+        (product) => product.id === productId
+      )
 
       if (product) {
         resolve(product)

@@ -1,29 +1,30 @@
 import { useState } from 'react'
+import styles from './ItemCount.module.css'
 
 function ItemCount({ stock, initial = 0 }) {
   const [count, setCount] = useState(initial)
 
   const increment = () => {
     if (count < stock) {
-      setCount(count + 1)
+      setCount((currentCount) => currentCount + 1)
     }
   }
 
   const decrement = () => {
     if (count > 0) {
-      setCount(count - 1)
+      setCount((currentCount) => currentCount - 1)
     }
   }
 
   return (
-    <div className="item-count">
-      <button type="button" onClick={decrement}>
+    <div className={styles.itemCount}>
+      <button type="button" onClick={decrement} disabled={count === 0}>
         -
       </button>
 
       <span>{count}</span>
 
-      <button type="button" onClick={increment}>
+      <button type="button" onClick={increment} disabled={count === stock}>
         +
       </button>
     </div>

@@ -1,0 +1,43 @@
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card {
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  object-fit: cover;
+}
+
+.content {
+  padding: 20px;
+}
+
+.category {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #777;
+}
+
+.title {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+.price {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
