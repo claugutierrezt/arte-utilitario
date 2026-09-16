@@ -1,11 +1,19 @@
+import { Link } from 'react-router-dom'
+import { useCart } from '../../context/CartContext'
 import styles from './CartWidget.module.css'
 
 function CartWidget() {
+  const { totalItems } = useCart()
+
   return (
-    <div className={styles.cartWidget} aria-label="Carrito con 3 productos">
+    <Link
+      to="/cart"
+      className={styles.cartWidget}
+      aria-label={`Carrito con ${totalItems} productos`}
+    >
       <span aria-hidden="true">🛒</span>
-      <span>3</span>
-    </div>
+      <span>{totalItems}</span>
+    </Link>
   )
 }
 

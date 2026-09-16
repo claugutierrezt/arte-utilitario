@@ -1,6 +1,31 @@
 .cartWidget {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  text-decoration: none;
+  color: #111111;
   font-size: 1.1rem;
+}
+
+.cartWidget span:last-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 24px;
+  height: 24px;
+  padding: 0 7px;
+
+  border-radius: 999px;
+
+  background: #718c7d;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cartWidget:hover {
+  opacity: 0.85;
 }

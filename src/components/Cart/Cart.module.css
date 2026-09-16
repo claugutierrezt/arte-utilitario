@@ -1,0 +1,142 @@
+.cart {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.title {
+  margin: 0 0 30px;
+  font-size: 32px;
+}
+
+.empty {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.empty h2 {
+  margin-top: 0;
+}
+
+.emptyLink {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #111111;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.itemInfo h3 {
+  margin: 0 0 10px;
+}
+
+.itemInfo p {
+  margin: 6px 0;
+}
+
+/* Esto no se pidió, pero yo lo haría así:
+   permitir modificar la cantidad directamente desde el carrito. */
+.quantityControl {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 8px;
+}
+
+.quantityControl button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quantityControl button:hover:not(:disabled) {
+  background: #f3f3f3;
+}
+
+.quantityControl button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.quantityControl span {
+  min-width: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.removeButton {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.summary {
+  margin-top: 30px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.total {
+  margin: 0 0 20px;
+  font-size: 26px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.clearButton,
+.checkoutButton {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clearButton {
+  background: #e5e5e5;
+  color: #111111;
+}
+
+.checkoutButton {
+  background: #718c7d;
+  color: #ffffff;
+}

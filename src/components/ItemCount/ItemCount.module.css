@@ -1,32 +1,61 @@
 .itemCount {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .itemCount button {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #f7f7f7;
-  font-size: 20px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 17px;
+  font-weight: 600;
   cursor: pointer;
 }
 
 .itemCount button:hover:not(:disabled) {
-  background: #ececec;
+  background: #f3f3f3;
 }
 
 .itemCount button:disabled {
   cursor: not-allowed;
-  opacity: 0.45;
+  opacity: 0.35;
 }
 
 .itemCount span {
-  min-width: 30px;
+  min-width: 20px;
   text-align: center;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
+}
+
+/* Botón principal de agregar */
+.itemCount button:last-child {
+  width: auto;
+  height: auto;
+  padding: 9px 14px;
+  margin-left: 4px;
+  border: none;
+  border-radius: 8px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.itemCount button:last-child:hover:not(:disabled) {
+  background: #111111;
+  opacity: 0.88;
+}
+
+.itemCount button:last-child:disabled {
+  background: #e5e5e5;
+  color: #999999;
+  opacity: 1;
 }

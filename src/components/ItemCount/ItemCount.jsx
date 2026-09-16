@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './ItemCount.module.css'
 
-function ItemCount({ stock, initial = 0 }) {
+function ItemCount({ stock, initial = 0, onAdd }) {
   const [count, setCount] = useState(initial)
 
   const increment = () => {
@@ -16,6 +16,12 @@ function ItemCount({ stock, initial = 0 }) {
     }
   }
 
+  const handleAdd = () => {
+    if (count > 0) {
+      onAdd(count)
+    }
+  }
+
   return (
     <div className={styles.itemCount}>
       <button type="button" onClick={decrement} disabled={count === 0}>
@@ -26,6 +32,14 @@ function ItemCount({ stock, initial = 0 }) {
 
       <button type="button" onClick={increment} disabled={count === stock}>
         +
+      </button>
+
+      <button
+        type="button"
+        onClick={handleAdd}
+        disabled={count === 0}
+      >
+        Agregar al carrito
       </button>
     </div>
   )
