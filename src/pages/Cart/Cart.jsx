@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
 import styles from './Cart.module.css'
 
@@ -10,10 +10,16 @@ function Cart() {
     updateQuantity,
   } = useCart()
 
+  const navigate = useNavigate()
+
   const total = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   )
+
+  const handleCheckout = () => {
+    navigate('/checkout')
+  }
 
   if (cart.length === 0) {
     return (
@@ -92,6 +98,7 @@ function Cart() {
 
           <button
             type="button"
+            onClick={handleCheckout}
             className={styles.checkoutButton}
           >
             Finalizar compra

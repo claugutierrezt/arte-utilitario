@@ -2,17 +2,21 @@
 
 Proyecto desarrollado en React con Vite para el curso de React JS.
 
-La aplicación representa un catálogo de portavasos artesanales organizados por categorías como viajes, músicos y momentos.
+La aplicación representa un e-commerce de portavasos artesanales organizados por categorías como viajes, músicos y momentos.
+
+En esta etapa el proyecto fue migrado a Firebase para utilizar Cloud Firestore como base de datos, Firebase Authentication para el registro e inicio de sesión de usuarios y Firestore para almacenar las órdenes de compra.
 
 ## Funcionalidades actuales
 
 - Listado dinámico de productos.
 - Renderizado de productos mediante `.map()`.
-- Obtención de productos mediante una promesa simulada.
+- Obtención de productos desde Cloud Firestore.
+- Consultas asíncronas mediante `async/await`.
 - Uso de `useState` y `useEffect`.
-- Separación de responsabilidades entre componentes.
+- Separación de responsabilidades entre componentes y páginas.
+- Organización de las vistas principales dentro de la carpeta `pages`.
 - Vista individual de detalle de producto.
-- Búsqueda dinámica de producto por `id`.
+- Consulta de producto por `id` desde Firestore.
 - Reutilización del componente `ItemCount`.
 - Control de stock en el contador.
 - Diseño responsive.
@@ -36,6 +40,23 @@ La aplicación representa un catálogo de portavasos artesanales organizados por
 - Selección de cantidad desde las tarjetas del catálogo.
 - Respeto del stock máximo disponible.
 - Feedback visual al agregar un producto al carrito.
+- Registro de usuarios con email y contraseña.
+- Inicio de sesión con usuarios existentes.
+- Cierre de sesión.
+- Persistencia de sesión mediante `onAuthStateChanged`.
+- Estado global del usuario mediante `AuthContext`.
+- Visualización del email del usuario autenticado.
+- Checkout protegido para usuarios autenticados.
+- Redirección al login cuando un usuario no autenticado intenta acceder al checkout.
+- Validación para impedir compras con el carrito vacío.
+- Formulario de datos de entrega.
+- Generación de órdenes en Cloud Firestore.
+- Asociación de órdenes con el usuario autenticado.
+- Registro de productos, cantidades, precios y total dentro de cada orden.
+- Fecha de creación mediante `serverTimestamp()`.
+- Confirmación de compra con ID de orden generado por Firebase.
+- Vaciado del carrito únicamente después de crear la orden correctamente.
+- Manejo de estados de carga y errores en consultas, autenticación y generación de órdenes.
 
 ## Mejoras adicionales
 
@@ -49,12 +70,6 @@ Además de los requerimientos de la entrega, se agregaron algunas mejoras de exp
 - Contador visual del carrito con formato de burbuja.
 - Navegación directa al carrito desde el `CartWidget`.
 
-Estas mejoras se encuentran comentadas dentro del código con la indicación:
-
-```js
-// Esto no se pidió, pero yo lo haría así:
-```
-
 ## Navegación
 
 La aplicación utiliza `react-router-dom` para manejar la navegación sin recargar la página.
@@ -65,6 +80,9 @@ Rutas principales:
 - `/category/:id` → muestra los productos filtrados por categoría.
 - `/item/:id` → muestra el detalle de un producto según su identificador.
 - `/cart` → muestra el carrito de compras.
+- `/login` → permite iniciar sesión.
+- `/register` → permite crear una cuenta.
+- `/checkout` → muestra el proceso de compra protegido.
 - `*` → muestra la página 404 para rutas inexistentes.
 
 Ejemplos:
@@ -77,55 +95,6 @@ Ejemplos:
 /item/2
 /item/3
 /cart
-```
-
-## Carrito de compras
-
-El carrito utiliza Context API para mantener un estado global accesible desde los distintos componentes de la aplicación.
-
-El contexto incluye las siguientes funciones:
-
-- `addItem(item, quantity)` → agrega un producto al carrito.
-- `removeItem(itemId)` → elimina un producto por su identificador.
-- `clear()` → vacía completamente el carrito.
-- `isInCart(id)` → verifica si un producto ya está agregado.
-- `updateQuantity(itemId, newQuantity)` → permite modificar la cantidad desde el carrito.
-
-Cuando un producto ya existe en el carrito, se actualiza su cantidad en lugar de crear un item duplicado.
-
-Las actualizaciones del estado se realizan de manera inmutable utilizando métodos como `.map()`, `.filter()` y el spread operator.
-
-## Tecnologías utilizadas
-
-- React
-- Vite
-- JavaScript
-- React Router DOM
-- Context API
-- CSS Modules
-
-## Ejecución del proyecto
-
-Instalar las dependencias:
-
-```bash
-npm install
-```
-
-Ejecutar el proyecto en modo desarrollo:
-
-```bash
-npm run dev
-```
-
-Luego abrir en el navegador la URL indicada por Vite, normalmente:
-
-```txt
-http://localhost:5173/
-```
-
-## Estado actual
-
-El proyecto cuenta con navegación dinámica, detalle de productos, control de stock y un carrito de compras funcional con estado global mediante Context API.
-
-La persistencia del carrito después de recargar la página no forma parte de esta entrega y se implementará posteriormente con Firebase.
+/login
+/register
+/checkout

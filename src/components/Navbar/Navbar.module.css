@@ -32,6 +32,41 @@
   text-decoration: underline;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.userEmail {
+  font-size: 14px;
+  color: #444;
+}
+
+.loginLink {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}
+
+.logoutButton {
+  border: 0;
+  background: transparent;
+  color: #222;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.logoutButton:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 700px) {
   .navbar {
     flex-wrap: wrap;
@@ -48,5 +83,14 @@
     width: 100%;
     justify-content: center;
     gap: 18px;
+  }
+
+  .actions {
+    margin-left: auto;
+    gap: 10px;
+  }
+
+  .userEmail {
+    display: none;
   }
 }
