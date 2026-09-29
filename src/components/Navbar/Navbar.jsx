@@ -18,7 +18,7 @@ function Navbar() {
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.brand}>
         <img
-          src="/img/logo.png"
+          src={`${import.meta.env.BASE_URL}img/logo.png`}
           alt="Arte Utilitario"
           className={styles.logo}
         />

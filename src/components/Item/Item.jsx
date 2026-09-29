@@ -9,8 +9,6 @@ function Item({ product }) {
   const [quantity, setQuantity] = useState(1)
   const [added, setAdded] = useState(false)
 
-  // Esto no se pidió, pero yo lo haría así:
-  // permitir seleccionar la cantidad directamente desde el catálogo.
   const increment = () => {
     if (quantity < product.stock) {
       setQuantity((currentQuantity) => currentQuantity + 1)
@@ -32,11 +30,13 @@ function Item({ product }) {
     }, 1500)
   }
 
+  const imageUrl = `${import.meta.env.BASE_URL}${product.img.replace(/^\//, '')}`
+
   return (
     <article className={styles.card}>
       <Link to={`/item/${product.id}`} className={styles.cardLink}>
         <img
-          src={product.img}
+          src={imageUrl}
           alt={product.name}
           className={styles.image}
         />
