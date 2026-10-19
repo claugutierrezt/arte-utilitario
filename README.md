@@ -261,8 +261,37 @@ Las reglas deben estar publicadas en Firebase Console para que se apliquen a la 
 - `firestore.rules`: reglas de seguridad documentadas.
 - `.env.example`: plantilla de variables de entorno.
 
+
+## Despliegue en Vercel
+
+La aplicación se encuentra publicada en Vercel y puede
+consultarse desde la siguiente dirección:
+
+https://arte-utilitario.vercel.app
+
+El proyecto está conectado a GitHub y utiliza
+las variables de entorno de Firebase configuradas
+en Vercel.
+
+Se verificó el funcionamiento en producción de:
+
+- Catálogo y detalle de productos desde Firestore.
+- Navegación entre categorías.
+- Registro, inicio y cierre de sesión.
+- Carrito de compras y control de stock.
+- Checkout para usuarios autenticados.
+- Generación de órdenes en Cloud Firestore.
+- Confirmación de compra con ID de orden.
+- Diseño responsive para dispositivos móviles.
+
+La compilación de producción se realizó con
+`npm run build`.
+
+
 ## Desarrollo por
 
 Claudia Gutiérrez
 
 Proyecto final desarrollado para el curso de React JS.
+
+
