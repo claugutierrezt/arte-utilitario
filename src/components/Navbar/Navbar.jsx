@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
-import { useAuth } from '../../context/AuthContext'
+import { useAuth } from '../../context/useAuth'
 import styles from './Navbar.module.css'
 
 function Navbar() {

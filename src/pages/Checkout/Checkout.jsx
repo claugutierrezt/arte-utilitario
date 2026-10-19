@@ -6,8 +6,8 @@ import {
   serverTimestamp
 } from 'firebase/firestore'
 
-import { useAuth } from '../../context/AuthContext'
-import { useCart } from '../../context/CartContext'
+import { useAuth } from '../../context/useAuth'
+import { useCart } from '../../context/useCart'
 import { db } from '../../firebase/config'
 import styles from './Checkout.module.css'
 

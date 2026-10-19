@@ -1,5 +1,5 @@
 import ItemCount from '../ItemCount/ItemCount'
-import { useCart } from '../../context/CartContext'
+import { useCart } from '../../context/useCart'
 import styles from './ItemDetail.module.css'
 
 function ItemDetail({ product }) {
